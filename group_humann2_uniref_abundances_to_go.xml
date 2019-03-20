@@ -1,12 +1,13 @@
-<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances" version="1.3.0">
+<tool id="group_humann2_uniref_abundances_to_go" name="Group abundances" version="1.3">
     <description> of UniRef50 gene families obtained (HUMAnN2 output) to Gene Ontology (GO) slim terms</description>
 
     <requirements>
-        <requirement version="1.9">numpy</requirement>
-        <requirement version="0.6.1">humann2</requirement>
-        <requirement version="0.6.4">goatools</requirement>
-        <requirement version="0.1.4">fisher</requirement>
-        <requirement version="1.3.0">group_humann2_uniref_abundances_to_go</requirement>
+        <requirement type="package" version="1.9">numpy</requirement>
+        <requirement type="package" version="0.11.2">humann2</requirement>
+        <requirement type="package" version="0.6.4">goatools</requirement>
+        <requirement type="package" version="0.1.4">fisher</requirement>
+        <requirement type="package" version="1.0.0">libgfortran</requirement>
+        <requirement type="package" version="1.3.0">group_humann2_uniref_abundances_to_go</requirement>
     </requirements>
 
     <stdio>
@@ -24,7 +25,7 @@
     <version_command></version_command>
 
     <command><![CDATA[
-        python cli.py
+        group_humann2_uniref_abundances_to_GO.sh
             -i $humann2_gene_families_abundance 
             -m $molecular_function_abundance
             -b $biological_process_abundance
